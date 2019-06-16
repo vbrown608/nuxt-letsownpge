@@ -25,7 +25,6 @@ import Prismic from 'prismic-javascript'
 import PrismicConfig from '~/prismic.config.js'
 
 export default {
-  transition: 'fade',
   async asyncData({ error, req, params, route }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req })

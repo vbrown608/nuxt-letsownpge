@@ -22,7 +22,6 @@ import Prismic from 'prismic-javascript'
 import PrismicConfig from '~/prismic.config.js'
 
 export default {
-  transition: 'transition--fade',
   async asyncData({ params, error, req }) {
     try {
       // eslint-disable-next-line no-console

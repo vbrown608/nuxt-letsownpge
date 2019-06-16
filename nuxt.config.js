@@ -187,6 +187,8 @@ export default {
     ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }]
   ],
 
+  // Route Settings
+
   router: {
     routeNameSplitter: '/'
   },
@@ -195,6 +197,12 @@ export default {
     routes: () => {
       return prismicRoutes
     }
+  },
+
+  // Default Transition
+  pageTransition: {
+    name: 'transition--fade',
+    mode: 'out-in'
   },
 
   /*
