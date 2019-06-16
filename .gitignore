@@ -85,3 +85,4 @@ sw.*
 
 #stupid osx
 .DS_STORE
+.editorconfig
