@@ -1,0 +1,15 @@
+.hyperlink {
+  @apply text-blue;
+  transition: color theme('transitionDuration') ease-in-out;
+  &:hover {
+    @apply text-teal;
+  }
+}
+
+.hyperlink--inverse {
+  @apply text-white;
+  transition: opacity theme('transitionDuration') ease-in-out;
+  &:hover {
+    @apply opacity-50;
+  }
+}

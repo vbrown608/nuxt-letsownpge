@@ -1,0 +1,58 @@
+/* Tailwind Normalize */
+/*! purgecss start ignore */
+@import "tailwindcss/base.css";
+/*! purgecss end ignore */
+
+/* Components / Elements That Allow Overrides */
+/*! purgecss start ignore */
+/* Elements */
+@import "./components/ui/hyperlink.pcss";
+/* Components */
+@import "./components/prismic/rich-text.pcss";
+/*! purgecss end ignore */
+
+/* Tailwind Overrides */
+@import "tailwindcss/components.css";
+@import "tailwindcss/utilities.css";
+
+/* Components / Additional Utilities / Transitions that ignore overrides */
+/*! purgecss start ignore */
+@import "./transitions.pcss";
+@import "./video-player.pcss";
+/* Utilities */
+@import "./utilities/underline.pcss";
+/*! purgecss end ignore */
+
+html {
+  font-size:16px;
+  @screen sm {
+    font-size: 18px;
+  }
+  @screen hd {
+    font-size:20px;
+  }
+  @screen 4k {
+    font-size:24px;
+  }
+}
+
+body {
+  @apply text-black font-sans;
+}
+
+#__app {
+  @apply w-full h-full;
+}
+
+#__layout {
+  @apply w-full h-full;
+}
+
+button {
+  &:focus {
+    outline:0;
+  }
+  &:active {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

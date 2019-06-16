@@ -1,0 +1,392 @@
+{
+  "Main" : {
+    "page_title" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Page Title",
+        "useAsTitle" : true
+      }
+    },
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "Page Slug"
+      }
+    },
+    "parent_page" : {
+      "type" : "Link",
+      "config" : {
+        "select" : "document",
+        "customtypes" : [ "page" ],
+        "label" : "Parent Page"
+      }
+    },
+    "hero" : {
+      "type" : "Group",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "hero_heading" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "Hero Heading"
+            }
+          },
+          "hero_subheading" : {
+            "type" : "StructuredText",
+            "config" : {
+              "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+              "label" : "Hero Subheading"
+            }
+          },
+          "hero_cta_text" : {
+            "type" : "Text",
+            "config" : {
+              "label" : "Hero CTA Text"
+            }
+          },
+          "hero_cta_link" : {
+            "type" : "Link",
+            "config" : {
+              "label" : "Hero CTA Link",
+              "allowTargetBlank" : true
+            }
+          },
+          "hero_image" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : { },
+              "thumbnails" : [ ],
+              "label" : "Hero Image"
+            }
+          }
+        },
+        "label" : "Hero"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "copy_section" : {
+            "type" : "Slice",
+            "fieldset" : "Copy Section",
+            "description" : "Some Copy",
+            "icon" : "text_format",
+            "display" : "list",
+            "non-repeat" : {
+              "copy" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label" : "Copy"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "centered_heading" : {
+            "type" : "Slice",
+            "fieldset" : "Centered Heading",
+            "description" : "A centered heading.",
+            "icon" : "format_color_text",
+            "display" : "list",
+            "non-repeat" : {
+              "heading" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Heading"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "full-bleed_image" : {
+            "type" : "Slice",
+            "fieldset" : "Full-bleed Image",
+            "description" : "A full-bleed Image",
+            "icon" : "image",
+            "display" : "list",
+            "non-repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "centered_copy" : {
+            "type" : "Slice",
+            "fieldset" : "Centered Copy",
+            "description" : "Centered paragraph text.",
+            "icon" : "text_format",
+            "display" : "list",
+            "non-repeat" : {
+              "copy" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label" : "Copy"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "alternating_columns" : {
+            "type" : "Slice",
+            "fieldset" : "Alternating Columns",
+            "description" : "Alternating Columns, text on left, image on right.",
+            "icon" : "compare_arrows",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              },
+              "row_subheading" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading4",
+                  "label" : "Row Subheading"
+                }
+              },
+              "row_heading" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Row Heading"
+                }
+              },
+              "row_copy" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, strong, em, hyperlink, list-item, o-list-item",
+                  "label" : "Row Copy"
+                }
+              },
+              "row_cta" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Row CTA"
+                }
+              },
+              "row_link" : {
+                "type" : "Link",
+                "config" : {
+                  "label" : "Row Link"
+                }
+              }
+            }
+          },
+          "circular_picture_grid" : {
+            "type" : "Slice",
+            "fieldset" : "Circular Picture Grid",
+            "description" : "A grid of circlularly cropped images with captions.",
+            "icon" : "grid_on",
+            "display" : "grid",
+            "non-repeat" : { },
+            "repeat" : {
+              "image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Image"
+                }
+              },
+              "image_caption" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Image Caption"
+                }
+              },
+              "image_description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "allowTargetBlank" : true,
+                  "label" : "Image Description"
+                }
+              }
+            }
+          },
+          "centered_button" : {
+            "type" : "Slice",
+            "fieldset" : "Centered Button",
+            "description" : "A large centered button. Good at the end of sections.",
+            "icon" : "insert_link",
+            "display" : "list",
+            "non-repeat" : {
+              "button_cta" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Button CTA"
+                }
+              },
+              "button_link" : {
+                "type" : "Link",
+                "config" : {
+                  "allowTargetBlank" : true,
+                  "label" : "Button Link"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "icon___text_three_column" : {
+            "type" : "Slice",
+            "fieldset" : "Icon + Text Three Column",
+            "description" : "Icon with heading, copy, and link.",
+            "icon" : "view_column",
+            "display" : "grid",
+            "non-repeat" : { },
+            "repeat" : {
+              "icon_svg_code" : {
+                "type" : "Embed",
+                "config" : {
+                  "label" : "Icon SVG Code",
+                  "placeholder" : "<svg></svg>"
+                }
+              },
+              "icon_heading" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+                  "label" : "Icon Heading"
+                }
+              },
+              "icon_copy" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label" : "Icon Copy"
+                }
+              },
+              "icon_cta" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Icon CTA"
+                }
+              },
+              "icon_link" : {
+                "type" : "Link",
+                "config" : {
+                  "label" : "Icon Link",
+                  "allowTargetBlank" : true
+                }
+              }
+            }
+          },
+          "video_embed" : {
+            "type" : "Slice",
+            "fieldset" : "Video Embed",
+            "description" : "Enter a link to a Youtube of Vimeo Video",
+            "icon" : "ondemand_video",
+            "display" : "list",
+            "non-repeat" : {
+              "video_url" : {
+                "type" : "Link",
+                "config" : {
+                  "label" : "Youtube or Vimeo URL"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "icons_with_text" : {
+            "type" : "Slice",
+            "fieldset" : "Icons With Text",
+            "description" : "A Column of icons with text",
+            "icon" : "face",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "image__cropped_to_circle_" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Image (cropped to circle)"
+                }
+              },
+              "icon_svg_code" : {
+                "type" : "Embed",
+                "config" : {
+                  "label" : "Icon SVG Code (will override image)",
+                  "placeholder" : "<svg></svg>"
+                }
+              },
+              "icon_copy" : {
+                "type" : "Text",
+                "config" : {
+                  "label" : "Icon Copy"
+                }
+              }
+            }
+          },
+          "change_background_color" : {
+            "type" : "Slice",
+            "fieldset" : "Change Background Color",
+            "description" : "Change the background for components after this one.",
+            "icon" : "invert_colors",
+            "display" : "list",
+            "non-repeat" : {
+              "background_color" : {
+                "type" : "Color",
+                "config" : {
+                  "label" : "Background Color"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "icon_links" : {
+            "type" : "Slice",
+            "fieldset" : "Icon Links",
+            "description" : "A group of icons that link to urls.",
+            "icon" : "group_work",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "icon_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Icon Image"
+                }
+              },
+              "icon_svg_code" : {
+                "type" : "Embed",
+                "config" : {
+                  "label" : "Icon SVG Code (will override image)",
+                  "placeholder" : "<svg></svg>"
+                }
+              },
+              "icon_link" : {
+                "type" : "Link",
+                "config" : {
+                  "allowTargetBlank" : true,
+                  "label" : "Icon Link"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

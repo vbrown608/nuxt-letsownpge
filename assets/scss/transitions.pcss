@@ -1,0 +1,30 @@
+.transition {
+  &--fade {
+    /* Enter */
+    &-enter {
+      opacity:0;
+    }
+    &-enter-active {
+      transition-property: opacity;
+      transition-timing-function: ease-in;
+      transition-duration: .333s;
+      will-change:height;
+    }
+    &-enter-to {
+      opacity:1;
+    } */
+    /* Leave */
+    &-leave {
+      opacity:1;
+    }
+    &-leave-active {
+      transition-property: opacity;
+      transition-timing-function: ease-out;
+      transition-duration: .333s;
+      will-change:height;
+    }
+    /* &-leave-to {
+      opacity:0;
+    }
+  }
+}

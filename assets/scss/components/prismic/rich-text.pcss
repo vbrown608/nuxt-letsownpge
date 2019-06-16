@@ -1,0 +1,97 @@
+.rich-text {
+  > * {
+    @apply mb-6;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-none text-black;
+  }
+
+  p {
+    @apply leading-normal text-gray-800;
+  }
+
+  ul {
+  }
+
+  ol {
+  }
+
+  ul,
+  ol {
+    @apply leading-tight;
+
+    li {
+      @apply mb-3 pl-6 relative text-gray-800;
+
+      &:before {
+        @apply absolute w-6 inline-flex justify-center items-center left-0 top-0 text-blue;
+        content: '\2022';
+        line-height: inherit;
+      }
+    }
+  }
+
+  a {
+    @apply hyperlink;
+  }
+}
+
+/* inverse styles */
+.rich-text-inverse {
+  @apply rich-text;
+  > * {
+    @apply mb-6;
+
+    &:last-child {
+      @apply mb-0;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply leading-none text-white;
+  }
+
+  p {
+    @apply leading-normal text-white;
+  }
+
+  ul {
+  }
+
+  ol {
+  }
+
+  ul,
+  ol {
+    @apply leading-tight;
+
+    li {
+      @apply mb-3 pl-6 relative text-white;
+
+      &:before {
+        @apply absolute w-6 inline-flex justify-center items-center left-0 top-0 opacity-50 text-white;
+        content: '\2022';
+        line-height: inherit;
+      }
+    }
+  }
+
+  a {
+    @apply hyperlink--inverse;
+  }
+}

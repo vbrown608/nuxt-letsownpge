@@ -1,0 +1,19 @@
+.underline-after {
+  @apply inline-block whitespace-no-wrap relative;
+  &:after {
+    @apply block absolute bottom-0 mb-px w-full;
+    content: ' ';
+    background: currentColor;
+    border-color: currentColor;
+    border-type: solid;
+  }
+}
+
+.underline {
+  &-1 {
+    @apply underline-after;
+    &:after {
+      height: 1px;
+    }
+  }
+}
