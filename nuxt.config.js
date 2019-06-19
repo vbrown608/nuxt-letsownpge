@@ -3,6 +3,7 @@ import Prismic from 'prismic-javascript'
 import pkg from './package'
 import PrismicConfig from './prismic.config'
 
+// TODO: move to utility
 const getParents = (page, query) => {
   // does page have parent
   if (page.data.parent_page.hasOwnProperty('uid')) {
