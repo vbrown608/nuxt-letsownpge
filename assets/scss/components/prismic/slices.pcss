@@ -1,0 +1,41 @@
+// for quick adjustment of slice styles
+/* general slice padding */
+[class^="slice-"] + [class^="slice-"] {
+  > * {
+    @apply py-6;
+  }
+}
+// slice-specific styles
+#__app {
+  .slice- {
+    &-centered-heading {
+      > * {
+        @apply py-6 mt-12;
+      }
+    }
+
+    &-full-bleed-image {
+      @apply my-12;
+
+      > * {
+        @apply py-0;
+      }
+    }
+    /* slice combos with little padding between */
+    &-centered-heading + &-copy-block,
+    &-centered-heading + &-centered-copy,
+    &-centered-copy + &-centered-copy,
+    &-centered-heading + &-copy-section {
+      > * {
+        @apply py-0;
+      }
+    }
+    /* slice combos with a little more padding between */
+    &-centered-copy + &-centered-copy,
+    &-centered-copy + &-centered-button {
+      > * {
+        @apply py-6;
+      }
+    }
+  }
+}

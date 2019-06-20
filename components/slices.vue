@@ -5,7 +5,8 @@
       :id="`slice-${index}`"
       :key="`slice-${index}`"
       :class="
-        kebabify(component.slice_type) +
+        'slice--' +
+          kebabify(component.slice_type) +
           (isDark(bgColor(index), kebabify(component.slice_type))
             ? '-inverse'
             : '')
@@ -28,7 +29,6 @@
         v-else
         :primary="component.primary"
         :items="component.items.length > 0 ? component.items : null"
-        class="py-8 xxl:py-12"
         :style="`background:${bgColor(index)};`"
       >
         <container>

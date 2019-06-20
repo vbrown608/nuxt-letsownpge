@@ -14,6 +14,7 @@
         v-if="document.body != null && document.body.length > 0"
         :key="`slices-${documentId}`"
         :content="document.body"
+        class="py-12"
       />
     </article>
     <prismic-edit-button :document-id="documentId" />

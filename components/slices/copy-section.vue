@@ -1,13 +1,11 @@
 <template>
-  <container>
-    <div class="max-w-md xl:max-w-lg mx-auto">
-      <rich-text
-        v-if="primary !== null"
-        class="leading-normal rich-text"
-        :richtext="primary.copy"
-      />
-    </div>
-  </container>
+  <div class="max-w-md xl:max-w-lg mx-auto">
+    <rich-text
+      v-if="primary !== null"
+      class="leading-normal rich-text"
+      :richtext="primary.copy"
+    />
+  </div>
 </template>
 
 <script>
