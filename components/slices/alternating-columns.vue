@@ -31,7 +31,7 @@
           <nav-link
             class="text-blue underline-1 hover:text-teal transition"
             :type="item.row_link.link_type"
-            :link="item.row_link.link_type"
+            :link="item.row_link.uid"
             :cta="item.row_cta"
           />
         </div>
