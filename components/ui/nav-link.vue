@@ -2,18 +2,22 @@
   <nuxt-link
     v-if="link.link_type === 'Document'"
     class="pointer inline-block"
-    :to="link.uid"
+    :to="resolvedLink"
   >
     {{ cta }}
   </nuxt-link>
-  <a v-else class="pointer inline-block" target="_blank" :href="link.url">
+  <a
+    v-else
+    class="pointer inline-block"
+    target="_blank"
+    :href="link.url"
+    rel="noopener"
+  >
     {{ cta }}
   </a>
 </template>
 
 <script>
-// import PrismicDOM from 'prismic-dom'
-
 export default {
   props: {
     cta: {
@@ -26,12 +30,12 @@ export default {
     }
   },
   computed: {
-    // resolvedLink() {
-    //   if (this.link.link_type === 'Document') {
-    //     return PrismicDOM.Link.url(this.link)
-    //   }
-    //   return null
-    // }
+    resolvedLink() {
+      if (this.link.link_type === 'Document') {
+        return this.$PrismicLink(this.link)
+      }
+      return null
+    }
   }
 }
 </script>
