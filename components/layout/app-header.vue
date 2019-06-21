@@ -28,11 +28,11 @@
             @click="menu.expanded = !menu.expanded"
           >
             <div class="h-6 flex-shrink-0" />
-            <nuxt-link
+            <!-- <nuxt-link
               class="block text-white md:text-blue p-3 uppercase tracking-wide"
               to="/problem"
               >The Problem</nuxt-link
-            >
+            > -->
             <nuxt-link
               class="block text-white md:text-blue p-3 uppercase tracking-wide"
               to="/history"
@@ -40,7 +40,7 @@
             >
             <nuxt-link
               class="block text-white md:text-blue p-3 uppercase tracking-wide"
-              to="/plan"
+              to="/our-demands"
               >The Plan</nuxt-link
             >
             <div class="px-3 mt-3 md:mt-0">
@@ -56,11 +56,11 @@
           </div>
         </transition-expand>
         <div class="ml-auto hidden md:flex flex-row items-center">
-          <nuxt-link
+          <!-- <nuxt-link
             class="block text-sm text-blue p-3 uppercase tracking-wide"
             to="/problem"
             >The Problem</nuxt-link
-          >
+          > -->
           <nuxt-link
             class="block text-sm text-blue p-3 uppercase tracking-wide"
             to="/history"
@@ -68,7 +68,7 @@
           >
           <nuxt-link
             class="block text-sm text-blue p-3 uppercase tracking-wide"
-            to="/plan"
+            to="/our-demands"
             >The Plan</nuxt-link
           >
           <div class="px-3 mt-3 md:mt-0">
