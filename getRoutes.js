@@ -1,6 +1,7 @@
 import Prismic from 'prismic-javascript'
 import PrismicConfig from './prismic.config'
 
+// eslint-disable-next-line no-unused-vars
 const getParents = (page, query) => {
   // does page have parent
   if (page.data.parent_page.hasOwnProperty('uid')) {

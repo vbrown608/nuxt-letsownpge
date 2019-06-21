@@ -3,11 +3,8 @@
     <article>
       <!-- hero -->
       <hero
-        :heading="document.hero_heading[0].text"
-        :subheading="document.hero_subheading[0].text"
-        :backgroundimage="document.hero_image.url"
-        :buttontext="document.hero_cta_text"
-        :buttonurl="document.hero_cta_link.url"
+        v-if="document.hero && document.hero.length > 0"
+        :content="document.hero"
       />
       <!-- slices -->
       <slices
