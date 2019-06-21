@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex -mx-3">
+    <div class="flex flex-wrap -mx-3">
       <div
         v-for="(item, index) in items"
         :key="`${uid}-item-${index}`"
