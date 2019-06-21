@@ -21,7 +21,7 @@ export default function(type, element, content, children) {
       const target = element.data.target
         ? `target="'${element.data.target}'" rel="noopener"`
         : ''
-      result = `<a href="${url}" ${target}>${content}</a>`
+      result = `<a href="${url}" ${target} rel="noopener">${content}</a>`
     }
     return result
   }
@@ -41,7 +41,7 @@ export default function(type, element, content, children) {
         const target = element.linkTo.target
           ? `target="${element.linkTo.target}" rel="noopener"`
           : ''
-        result = `<a href="${url}" ${target}>${result}</a>`
+        result = `<a href="${url}" ${target} rel="noopener">${result}</a>`
       }
     }
     const wrapperClassList = [element.label || '', 'block-img']
