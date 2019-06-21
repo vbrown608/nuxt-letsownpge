@@ -14,19 +14,19 @@
     </div>
     <div class="my-auto py-24 relative z-10 p-8">
       <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-widest text-white text-center mb-10 leading-none"
+        class="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-widest text-white text-center leading-none"
       >
         {{ content[0].hero_heading[0].text }}
       </h1>
       <h2
         v-if="content[0].hero_subheading[0] != null"
-        class="text-2xl text-white text-center mb-12 leading-none"
+        class="text-2xl text-white text-center mt-10 leading-none"
       >
         {{ content[0].hero_subheading[0].text }}
       </h2>
       <div
-        v-if="content[0].hero_cta_link.link_type.length > 0"
-        class="text-center"
+        v-if="content[0].hero_cta_link.url != null"
+        class="text-center mt-12"
       >
         <button-cta
           :cta="content[0].hero_cta_text"
