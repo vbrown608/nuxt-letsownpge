@@ -17,7 +17,7 @@
         class="py-12"
       />
     </article>
-    <prismic-edit-button :document-id="documentId" />
+    <!-- <prismic-edit-button :document-id="documentId" /> -->
   </main>
 </template>
 

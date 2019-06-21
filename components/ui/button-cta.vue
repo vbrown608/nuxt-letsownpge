@@ -1,8 +1,7 @@
 <template>
   <nav-link
-    class="py-3 px-8 bg-blue hover:bg-teal"
+    class="py-3 px-8 bg-blue hover:bg-teal transition"
     :link="link"
-    :type="type"
     :class="{ 'text-white': isDark }"
     :target="target"
     :cta="cta"
@@ -18,12 +17,8 @@ export default {
       default: '_self'
     },
     link: {
-      type: String,
-      default: '#'
-    },
-    type: {
-      type: String,
-      default: 'anchor'
+      type: Object,
+      default: null
     },
     color: {
       type: String,

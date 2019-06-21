@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <button-cta :cta="primary.button_cta" />
+    <button-cta :cta="primary.button_cta" :link="primary.button_link" />
   </div>
 </template>
 

@@ -1,92 +1,7 @@
 import 'dotenv/config'
-import Prismic from 'prismic-javascript'
 import pkg from './package'
+import prismicRoutes from './getRoutes'
 import PrismicConfig from './prismic.config'
-
-// TODO: move to utility
-const getParents = (page, query) => {
-  // does page have parent
-  if (page.data.parent_page.hasOwnProperty('uid')) {
-    let parentURI
-    // build parent(s)
-    const pages = query.results
-    parentURI = page.data.parent_page.uid + '/'
-    // grandparent
-    const grandparent = pages
-      .filter(relative => {
-        return relative.uid === page.data.parent_page
-      })
-      .pop()
-    if (grandparent && grandparent.data.parent_page.hasOwnProperty('uid')) {
-      parentURI = grandparent.data.parent_page.uid + '/' + parentURI
-      // great grand parent
-      parentURI = page.data.parent_page.uid + '/'
-      const greatgrandparent = pages
-        .filter(relative => {
-          return relative.uid === grandparent.data.parent_page
-        })
-        .pop()
-      if (
-        greatgrandparent &&
-        greatgrandparent.data.parent_page.hasOwnProperty('uid')
-      ) {
-        parentURI = greatgrandparent.data.parent_page.uid + '/' + parentURI
-        const greatgreatgrandparent = pages
-          .filter(relative => {
-            return relative.uid === greatgrandparent.data.parent_page
-          })
-          .pop()
-        if (
-          greatgreatgrandparent &&
-          grandparent.data.parent_page.hasOwnProperty('uid')
-        ) {
-          // eslint-disable-next-line no-console
-          console.log(
-            `${page.uid}'s heritage is too deep, available at ${parentURI}`
-          )
-        }
-      }
-    }
-    return parentURI
-  }
-  // no parent
-  return ''
-}
-
-// TODO: move to module and import for cleaner config file
-// TODO: make page config object in prismic.config file and feed to function
-const prismicRoutes = new Promise((resolve, reject) => {
-  // get api
-  resolve(Prismic.getApi(PrismicConfig.apiEndpoint))
-})
-  .then(api => {
-    // get query
-    return new Promise((resolve, reject) => {
-      resolve(api.query(''))
-    })
-  })
-  .then(query => {
-    // process query to get routes
-    const routes = []
-    query.results
-      .filter(page => {
-        if (page.type === 'page') {
-          return true
-        }
-        return false
-      })
-      .map(page => {
-        // eslint-disable-next-line no-console
-        // check if page exists and has parent
-        if (page.type === 'page') {
-          const parents = getParents(page, query)
-          routes.push(`/${parents}${page.uid}`)
-        }
-      })
-    routes.push('/preview')
-    routes.push('/')
-    return routes
-  })
 
 export default {
   mode: 'universal',
@@ -127,7 +42,7 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/icon.png' },
       {
         rel: 'stylesheet',
         type: 'text/css',

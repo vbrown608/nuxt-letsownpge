@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Imgix from 'imgix-core-js'
+import ImgixClient from 'imgix-core-js'
 import imgixConfig from '~/imgix.config.js'
 import tailwind from '~/tailwind.config.js'
 
@@ -93,8 +93,8 @@ export default {
   computed: {
     imgixUrls() {
       // config
-      const client = new Imgix({
-        domains: 'letsownpge.imgix.net',
+      const client = new ImgixClient({
+        domain: imgixConfig.subdomain + '.imgix.net',
         secureURLToken: imgixConfig.token
       })
       const urls = {}

@@ -25,6 +25,7 @@
             v-show="menu.expanded"
             class="bg-blue md:bg-transparent ml-auto px-8 flex flex-col md:flex-row items-end"
             style="box-shadow: rgba(255,255,255,.2) 0px 0px 0px 2px;"
+            @click="menu.expanded = !menu.expanded"
           >
             <div class="h-6 flex-shrink-0" />
             <nuxt-link
@@ -43,11 +44,13 @@
               >The Plan</nuxt-link
             >
             <div class="px-3 mt-3 md:mt-0">
-              <nuxt-link
+              <a
                 class="inline-block text-blue bg-white md:text-white py-3 px-8 uppercase tracking-widest md:bg-blue"
-                to="/join"
-                >Join</nuxt-link
+                href="https://actionnetwork.org/petitions/no-pge-bailout"
+                target="_blank"
               >
+                Join
+              </a>
             </div>
             <div class="h-10 flex-shrink-0" />
           </div>
@@ -69,10 +72,11 @@
             >The Plan</nuxt-link
           >
           <div class="px-3 mt-3 md:mt-0">
-            <nuxt-link
+            <a
               class="inline-block text-sm text-white py-2 px-8 uppercase tracking-widest md:bg-blue"
-              to="/"
-              >Join</nuxt-link
+              href="https://actionnetwork.org/petitions/no-pge-bailout"
+              target="_blank"
+              >Join</a
             >
           </div>
         </div>

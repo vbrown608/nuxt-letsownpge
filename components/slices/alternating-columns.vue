@@ -30,8 +30,7 @@
         <div>
           <nav-link
             class="text-blue underline-1 hover:text-teal transition"
-            :type="item.row_link.link_type"
-            :link="item.row_link.uid"
+            :link="item.row_link"
             :cta="item.row_cta"
           />
         </div>
@@ -42,13 +41,18 @@
 
 <script>
 import PrismicConfig from '~/prismic.config.js'
-
+// import linkResolver from '~/plugins/link-resolver'
 export default {
   props: PrismicConfig.defaultProps,
   data() {
     return {
       uid: this._uid
     }
+  },
+  methods: {
+    // linkResolver(doc) {
+    //   return linkResolver(doc)
+    // }
   }
   /* to merge the default values, use the below code instead */
   /*

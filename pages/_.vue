@@ -13,7 +13,7 @@
         :content="document.body"
       />
     </article>
-    <prismic-edit-button :document-id="documentId" />
+    <!-- <prismic-edit-button :document-id="documentId" /> -->
   </main>
 </template>
 

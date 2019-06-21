@@ -1,0 +1,37 @@
+import Prismic from 'prismic-javascript'
+import PrismicConfig from '../prismic.config'
+
+const documents = new Promise((resolve, reject) => {
+  // get api
+  resolve(Prismic.getApi(PrismicConfig.apiEndpoint))
+})
+  .then(api => {
+    // get query
+    return new Promise((resolve, reject) => {
+      resolve(api.query(''))
+    })
+  })
+  .then(query => {
+    // process query to get routes
+    // eslint-disable-next-line no-console
+    return query.results
+  })
+
+export const state = () => ({
+  documents: null
+})
+
+export const mutations = {
+  setDocuments: (state, data) => {
+    state.documents = data
+  }
+}
+
+export const actions = {
+  async nuxtServerInit({ commit }) {
+    // eslint-disable-next-line no-console
+    const data = await documents
+    // eslint-disable-next-line no-console
+    commit('setDocuments', await data)
+  }
+}
