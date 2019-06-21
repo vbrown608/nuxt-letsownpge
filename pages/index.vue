@@ -22,6 +22,9 @@
 import Prismic from 'prismic-javascript'
 import PrismicConfig from '~/prismic.config.js'
 
+import ImgixClient from 'imgix-core-js'
+import imgixConfig from '~/imgix.config.js'
+
 export default {
   async asyncData({ error, req, params, route }) {
     try {
@@ -31,14 +34,63 @@ export default {
       const result = await api.getSingle('home')
       document = result.data
       // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
+      // if (process.client) window.prismic.setupEditButton()
+
+      const client = new ImgixClient({
+        domain: imgixConfig.subdomain + '.imgix.net',
+        secureURLToken: imgixConfig.token
+      })
+
+      const ixparams = {
+        auto: 'format,compress',
+        fit: 'max'
+      }
+
+      const metaImg = () => {
+        if (document.meta_image.length > 0) {
+          return client.buildURL(encodeURI(document.meta_image[0].url), {
+            ...ixparams,
+            w: 1200,
+            h: 1200
+          })
+        }
+        return ''
+      }
+
+      const meta = {
+        title:
+          document.meta_title != null
+            ? document.meta_title
+            : document.page_title,
+        description: document.meta_description,
+        image: metaImg
+      }
 
       return {
         document,
-        documentId: result.id
+        documentId: result.id,
+        meta
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
+  head() {
+    return {
+      title: this.meta.title,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.meta.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.meta.image
+        }
+      ]
     }
   }
 }
