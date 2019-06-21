@@ -5,7 +5,7 @@
   >
     <div class="w-full h-full absolute pin z-0">
       <imgix
-        v-if="content[0].hero_image != null"
+        v-if="content[0].hero_image.url.length > 0"
         objectfit="cover"
         :originalurl="content[0].hero_image.url"
         :params="imageParams"
@@ -24,7 +24,10 @@
       >
         {{ content[0].hero_subheading[0].text }}
       </h2>
-      <div v-if="content[0].hero_cta_link[0] != null" class="text-center">
+      <div
+        v-if="content[0].hero_cta_link.link_type.length > 0"
+        class="text-center"
+      >
         <button-cta
           :cta="content[0].hero_cta_text"
           :link="content[0].hero_cta_link"
