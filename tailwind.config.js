@@ -29,6 +29,10 @@ module.exports = {
       screen: '100vh'
     },
     extend: {
+      lineHeight: {
+        tight: '1.333',
+        normal: '1.666'
+      },
       width: {
         '2/5': '40%',
         '3/5': '60%',

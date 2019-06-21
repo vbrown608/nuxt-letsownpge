@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="flex flex-wrap -mx-3">
+    <div class="flex flex-wrap justify-center -mx-3">
       <div
         v-for="(item, index) in items"
         :key="`${uid}-item-${index}`"
-        class="w-1/2 md:w-1/3 lg:w-1/4 px-3 text-center flex-col mb-12"
+        class="w-1/2 md:w-1/3 px-3 text-center flex-col mb-12"
       >
         <div class="mx-auto w-1/2 mb-6">
           <imgix

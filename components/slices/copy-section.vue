@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-md xl:max-w-lg mx-auto">
+  <div class="max-w-lg xl:max-w-xl mx-auto">
     <rich-text
       v-if="primary !== null"
       class="leading-normal rich-text"
