@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import pkg from './package'
 import prismicRoutes from './getRoutes'
-import PrismicConfig from './prismic.config'
+// import PrismicConfig from './prismic.config'
 
 export default {
   mode: 'universal',
@@ -49,15 +49,15 @@ export default {
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
       }
     ],
-    script: [
-      {
-        innerHTML:
-          '{ window.prismic = { endpoint: "' +
-          PrismicConfig.apiEndpoint +
-          '"} }'
-      },
-      { src: '//static.cdn.prismic.io/prismic.min.js' }
-    ],
+    // script: [
+    //   {
+    //     innerHTML:
+    //       '{ window.prismic = { endpoint: "' +
+    //       PrismicConfig.apiEndpoint +
+    //       '"} }'
+    //   },
+    //   { src: '//static.cdn.prismic.io/prismic.min.js' }
+    // ],
     __dangerouslyDisableSanitizers: ['script'],
     htmlAttrs: {
       class: 'h-full w-full relative'
@@ -88,7 +88,8 @@ export default {
     { src: '@/plugins/global.js' },
     { src: '@/plugins/link-resolver.js' },
     { src: '@/plugins/html-serializer.js' },
-    { src: '@/plugins/prismic-vue.js' },
+    // plugin is super out-of-date and broken
+    // { src: '@/plugins/prismic-vue.js' },
     { src: '@/plugins/is-dark.js' }
   ],
 
@@ -98,6 +99,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
     'nuxt-webfontloader',
     'nuxt-purgecss',
     ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }]
