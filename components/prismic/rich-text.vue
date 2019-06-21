@@ -6,7 +6,7 @@
 <script>
 // eslint-disable-next-line no-unused-vars
 import LinkResolver from '~/plugins/link-resolver.js'
-import HtmlSerializer from '~/plugins/html-serializer.js'
+// import HtmlSerializer from '~/plugins/html-serializer.js'
 import PrismicDOM from 'prismic-dom'
 
 export default {
@@ -20,8 +20,8 @@ export default {
     content() {
       return PrismicDOM.RichText.asHtml(
         this.richtext,
-        LinkResolver,
-        HtmlSerializer
+        LinkResolver
+        // HtmlSerializer
       )
     }
   }
