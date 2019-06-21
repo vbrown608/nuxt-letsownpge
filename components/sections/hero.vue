@@ -5,7 +5,7 @@
   >
     <div class="w-full h-full absolute pin z-0">
       <imgix
-        v-if="content[0].hero_image.url.length > 0"
+        v-if="content[0].hero_image.url != null"
         objectfit="cover"
         :originalurl="content[0].hero_image.url"
         :params="imageParams"
