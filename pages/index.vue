@@ -66,7 +66,7 @@ export default {
           document.meta_description != null
             ? document.meta_description
             : "PG&E is a profitable disaster. California deserves a utility run for people, not profit. The solution is to put it in the hands of the public and PG&E's workers.",
-        image: metaImg
+        image: metaImg()
       }
 
       return {
