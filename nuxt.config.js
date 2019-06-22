@@ -79,7 +79,7 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Lato:400,400i,700,7s00i']
+      families: ['Rubik:400,400i,500,500i']
     }
   },
 
@@ -140,6 +140,7 @@ export default {
 
   // build (webpack) config
   build: {
+    // analyze: true,
     // push to webpack property
     extend(config, ctx) {
       // Run ESLint on save
