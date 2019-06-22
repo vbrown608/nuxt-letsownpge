@@ -38,8 +38,8 @@ export default {
     title: "Let's Own PG&E",
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      // { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/icon.png' },
@@ -49,15 +49,15 @@ export default {
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
       }
     ],
-    script: [
-      {
-        innerHTML:
-          '{ window.prismic = { endpoint: "' +
-          PrismicConfig.apiEndpoint +
-          '"} }'
-      },
-      { src: '//static.cdn.prismic.io/prismic.min.js' }
-    ],
+    // script: [
+    //   {
+    //     innerHTML:
+    //       '{ window.prismic = { endpoint: "' +
+    //       PrismicConfig.apiEndpoint +
+    //       '"} }'
+    //   },
+    //   { src: '//static.cdn.prismic.io/prismic.min.js' }
+    // ],
     __dangerouslyDisableSanitizers: ['script'],
     htmlAttrs: {
       class: 'h-full w-full relative'

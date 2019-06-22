@@ -89,6 +89,11 @@ export default {
           content: this.meta.description
         },
         {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.meta.description
+        },
+        {
           hid: 'og:image',
           property: 'og:image',
           content: this.meta.image
