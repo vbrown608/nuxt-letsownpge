@@ -13,7 +13,7 @@ module.exports = {
       '4k': '3840px'
     },
     fontFamily: {
-      sans: ['Lato', 'sans-serif']
+      sans: ['Rubik', 'sans-serif']
     },
     // tracking: {
     //   '-3': '-3px',
