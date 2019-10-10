@@ -47,13 +47,15 @@ export default {
         rel: 'preload',
         as: 'style',
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-        crossorigin: 'anonymous'
+        crossorigin: 'anonymous',
+        onload: "this.rel='stylesheet'"
       },
       {
         rel: 'preload',
         as: 'style',
         href: 'https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i',
-        crossorigin: 'anonymous'
+        crossorigin: 'anonymous',
+        onload: "this.rel='stylesheet'"
       }
     ],
     // script: [

@@ -26,7 +26,6 @@
           <div class="text-xs uppercase text-blue font-bold tracking-wider">
             {{ magnate.data.title }}
           </div>
-          <rich-text :content="magnate.data.description" />
         </div>
       </div>
     </div>
@@ -60,11 +59,13 @@
               :object-fit="'cover'"
             />
           </div>
-          <div>{{ modalName }}</div>
+          <div class="text-lg">{{ modalName }}</div>
           <div class="text-xs uppercase text-blue font-bold tracking-wider">
             {{ modalTitle }}
           </div>
-          <rich-text :content="modalDesc" />
+          <div class="mt-3 text-sm">
+            <rich-text :richtext="modalDesc" />
+          </div>
         </div>
       </div>
     </transition>
