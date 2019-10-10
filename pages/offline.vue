@@ -20,9 +20,9 @@
 
 <script>
 import Prismic from 'prismic-javascript'
+import ImgixClient from 'imgix-core-js'
 import PrismicConfig from '~/prismic.config.js'
 
-import ImgixClient from 'imgix-core-js'
 import imgixConfig from '~/imgix.config.js'
 
 export default {

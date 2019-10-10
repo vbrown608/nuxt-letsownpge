@@ -4,9 +4,9 @@
 </template>
 
 <script>
+import PrismicDOM from 'prismic-dom'
 import LinkResolver from '~/plugins/link-resolver.js'
 // import HtmlSerializer from '~/plugins/html-serializer.js'
-import PrismicDOM from 'prismic-dom'
 
 export default {
   props: {
