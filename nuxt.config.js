@@ -15,7 +15,7 @@ export default {
     name: "Let's Own PG&E",
     lang: 'en',
     theme_color: '#005179',
-    display: 'fullscreen',
+    display: 'standalone',
     background_color: '#005179'
   },
 
