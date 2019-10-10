@@ -16,7 +16,7 @@
           <a
             target="_blank"
             class="text-white my-2 font-bold"
-            href="https://actionnetwork.org/petitions/no-pge-bailout"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
           >
             Join
           </a>

@@ -46,7 +46,7 @@
             <div class="px-3 mt-3 md:mt-0">
               <a
                 class="inline-block text-blue bg-white md:text-white py-3 px-8 uppercase tracking-widest md:bg-blue"
-                href="https://actionnetwork.org/petitions/no-pge-bailout"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
                 target="_blank"
               >
                 Join
@@ -74,7 +74,7 @@
           <div class="px-3 mt-3 md:mt-0">
             <a
               class="inline-block text-sm text-white py-2 px-8 uppercase tracking-widest md:bg-blue"
-              href="https://actionnetwork.org/petitions/no-pge-bailout"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
               target="_blank"
               >Join</a
             >
