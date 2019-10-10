@@ -8,15 +8,16 @@
           class="p-3 w-1/2 md:w-1/3 lg:w-1/4 text-center cursor-pointer"
           @click="openModal(magnate)"
         >
-          <div class="mx-auto w-2/3 mb-6">
+          <div class="mx-auto w-2/3 mb-3">
             <imgix
               class="rounded-full overflow-hidden"
               :originalurl="magnate.data.headshot.url"
-              :resolution="0.25"
+              :resolution="0.6"
+              :maxwidth="400"
               :params="{
                 fit: 'facearea',
                 facepad: '2',
-                htn: 4,
+                htn: 6,
                 duotone: '005179,ffffff'
               }"
               :object-fit="'cover'"
@@ -26,17 +27,22 @@
           <div class="text-xs uppercase text-blue font-bold tracking-wider">
             {{ magnate.data.title }}
           </div>
+          <div
+            class="opacity-50 mt-2 text-blue hover:opacity-100 transition text-xxs font-bold  tracking-wider uppercase flex justify-center items-center"
+          >
+            <span>Learn More</span> <i class="material-icons ml-1">launch</i>
+          </div>
         </div>
       </div>
     </div>
     <transition name="fade">
       <div
         v-show="modalOpen"
-        class="fixed inset-0 h-screen w-screen bg-white-alpha z-50 flex flex-col items-center justify-center"
+        class="fixed inset-0 h-screen w-screen bg-white-alpha z-50 p-6 flex flex-col items-center justify-center"
       >
-        <div class="aboslute inset-0 z-10" @click="closeModal" />
+        <div class="absolute inset-0 z-10" @click="closeModal" />
         <div
-          class="bg-white w-full max-w-xl min-h-1/2-screen shadow p-12 relative z-20"
+          class="bg-white w-full max-w-xl min-h-1/2-screen shadow p-6 md:p-12 relative z-20"
           @click="() => true"
         >
           <button
@@ -49,11 +55,12 @@
             <imgix
               class="rounded-full overflow-hidden"
               :originalurl="modalImage"
-              :resolution="0.33"
+              :resolution="0.7"
+              :maxwidth="600"
               :params="{
                 fit: 'facearea',
                 facepad: '2',
-                htn: 6,
+                htn: 8,
                 duotone: '005179,ffffff'
               }"
               :object-fit="'cover'"

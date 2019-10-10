@@ -29,6 +29,9 @@ module.exports = {
       screen: '100vh'
     },
     extend: {
+      fontSize: {
+        xxs: '0.625rem'
+      },
       lineHeight: {
         tight: '1.333',
         normal: '1.666'

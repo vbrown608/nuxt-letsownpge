@@ -46,7 +46,7 @@ export default {
       {
         rel: 'preload',
         as: 'style',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        href: 'https://fonts.googleapis.com/css?family=Material+Icons',
         crossorigin: 'anonymous',
         onload: "this.rel='stylesheet'"
       },
