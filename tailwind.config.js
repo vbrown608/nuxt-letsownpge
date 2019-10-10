@@ -29,6 +29,9 @@ module.exports = {
       screen: '100vh'
     },
     extend: {
+      fontSize: {
+        xxs: '0.625rem'
+      },
       lineHeight: {
         tight: '1.333',
         normal: '1.666'
@@ -42,6 +45,7 @@ module.exports = {
       colors: {
         blue: '#005179',
         white: '#ffffff',
+        'white-alpha': '#ffffffcc',
         teal: '#20A4A6'
       },
       margin: {

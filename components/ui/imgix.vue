@@ -61,6 +61,14 @@ export default {
       type: String,
       default: ''
     },
+    resolution: {
+      type: Number,
+      default: 1
+    },
+    maxwidth: {
+      type: Number,
+      default: null
+    },
     objectfit: {
       type: String,
       default: 'contain'
@@ -132,7 +140,11 @@ export default {
           parseFloat(aspectratio.split(':')[1]) /
           parseFloat(aspectratio.split(':')[0])
         let width = tailwind.theme.screens[screen]
-        width = parseInt(width.replace('px', ''))
+        width =
+          this.maxwidth != null &&
+          parseInt(width.replace('px', '')) * this.resolution > this.maxwidth
+            ? this.maxwidth
+            : parseInt(width.replace('px', '')) * this.resolution
         width = process.client
           ? (width * window.devicePixelRatio).toFixed(0)
           : width

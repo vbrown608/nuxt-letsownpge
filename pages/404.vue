@@ -11,7 +11,6 @@
         v-if="document.body != null && document.body.length > 0"
         :key="`slices-${documentId}`"
         :content="document.body"
-        :magnates="magnates"
         class="py-12"
       />
     </article>
@@ -27,16 +26,12 @@ import PrismicConfig from '~/prismic.config.js'
 import imgixConfig from '~/imgix.config.js'
 
 export default {
-  async asyncData({ params, error, req }) {
+  async asyncData({ error, req, params, route }) {
     try {
-      // eslint-disable-next-line no-console
-      console.log(params)
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req })
+
       let document = {}
-      const result = await api.getByUID(
-        'page',
-        params.pathMatch.split('/').pop()
-      )
+      const result = await api.getSingle('home')
       document = result.data
       // Load the edit button
       // if (process.client) window.prismic.setupEditButton()
@@ -66,7 +61,7 @@ export default {
         title:
           document.meta_title != null
             ? document.meta_title
-            : "Let's Own PG&E: " + document.page_title,
+            : document.page_title,
         description:
           document.meta_description != null
             ? document.meta_description
@@ -74,17 +69,8 @@ export default {
         image: metaImg()
       }
 
-      // get magnates
-      const magnates = await api
-        .query(Prismic.Predicates.at('document.type', 'disaster_magnate'))
-        .then(response => {
-          return response.results
-          // response is the response object, response.results holds the documents
-        })
-
       return {
         document,
-        magnates,
         documentId: result.id,
         meta
       }
