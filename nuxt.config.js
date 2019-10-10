@@ -1,7 +1,7 @@
 import 'dotenv/config'
-import pkg from './package'
+// import pkg from './package'
 import prismicRoutes from './getRoutes'
-import PrismicConfig from './prismic.config'
+// import PrismicConfig from './prismic.config'
 
 export default {
   mode: 'universal',
@@ -44,9 +44,16 @@ export default {
     link: [
       { rel: 'icon', type: 'image/png', href: '/icon.png' },
       {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        crossorigin: 'anonymous'
+      },
+      {
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i',
+        crossorigin: 'anonymous'
       }
     ],
     // script: [
@@ -67,6 +74,15 @@ export default {
     }
   },
 
+  // preload fonts
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -77,11 +93,11 @@ export default {
    */
   css: ['@/assets/scss/index.pcss'],
 
-  webfontloader: {
-    google: {
-      families: ['Lato:400,400i,700,7s00i']
-    }
-  },
+  // webfontloader: {
+  //   google: {
+  //     families: ['Lato:400,400i,700,7s00i']
+  //   }
+  // },
 
   // plugins
   plugins: [
@@ -98,7 +114,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    'nuxt-webfontloader',
+    // 'nuxt-webfontloader',
     'nuxt-purgecss',
     ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }]
   ],

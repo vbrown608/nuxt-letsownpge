@@ -11,7 +11,6 @@
         v-if="document.body != null && document.body.length > 0"
         :key="`slices-${documentId}`"
         :content="document.body"
-        :magnates="magnates"
         class="py-12"
       />
     </article>
@@ -70,17 +69,8 @@ export default {
         image: metaImg()
       }
 
-      // get magnates
-      const magnates = await api
-        .query(Prismic.Predicates.at('document.type', 'disaster_magnate'))
-        .then(response => {
-          return response.results
-          // response is the response object, response.results holds the documents
-        })
-
       return {
         document,
-        magnates,
         documentId: result.id,
         meta
       }

@@ -55,7 +55,6 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.0",
     "nuxt-purgecss": "^0.2.1",
-    "nuxt-webfontloader": "^1.0.0",
     "postcss": "^7.0.17",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.1",

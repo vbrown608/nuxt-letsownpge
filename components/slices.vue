@@ -19,6 +19,20 @@
               ? '-inverse'
               : '')
         "
+        v-if="component.slice_type == 'disaster_magnates'"
+        :style="`background:${bgColor(index)};`"
+        :class="{ inverse: false }"
+        :magnates="magnates"
+        :primary="component.primary"
+        :items="component.items.length > 0 ? component.items : null"
+      />
+      <component
+        :is="
+          kebabify(component.slice_type) +
+            (isDark(bgColor(index), kebabify(component.slice_type))
+              ? '-inverse'
+              : '')
+        "
         v-if="hasNoContainer(kebabify(component.slice_type))"
         :style="`background:${bgColor(index)};`"
         :class="{ inverse: false }"
@@ -54,6 +68,10 @@ import TailwindConfig from '~/tailwind.config.js'
 export default {
   props: {
     content: {
+      type: Array,
+      default: null
+    },
+    magnates: {
       type: Array,
       default: null
     }

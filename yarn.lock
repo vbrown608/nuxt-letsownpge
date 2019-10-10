@@ -6372,10 +6372,9 @@ nuxt-purgecss@^0.2.1:
     purgecss "^1.1.0"
     purgecss-webpack-plugin "^1.4.0"
 
-nuxt-webfontloader@^1.0.0:
+"nuxt-webfontloader@https://github.com/reilnuud/nuxt-webfontloader":
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/nuxt-webfontloader/-/nuxt-webfontloader-1.1.0.tgz#68b47ffbeaee4c41969f42f57a86946e0c36715c"
-  integrity sha512-GyDgABmI0Oq54s2tA9SZC28TmHy2xGdWSXrfcGPPfDBVhgQQlGL5CJcAlvovcuhefzzZrzGgs35HIcv5qym4fQ==
+  resolved "https://github.com/reilnuud/nuxt-webfontloader#387e73e4ce56ddc9557593c5b1bdea23ced7bf1c"
   dependencies:
     webfontloader "^1.6.28"
 
