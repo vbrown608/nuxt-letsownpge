@@ -14,28 +14,28 @@
   },
   "dependencies": {
     "@nuxtjs/google-tag-manager": "^2.3.2",
-    "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/prismic": "^1.2.4",
+    "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
     "eslint-plugin-nuxt": "^1.0.0",
     "imgix-core-js": "^2.3.1",
-    "nuxt": "^2.14.5",
+    "nuxt": "2.14.4",
     "plyr": "^3.6.2",
     "postcss-easy-import": "^3.0.0",
-    "postcss-scss": "^3.0.0",
-    "vue-images-loaded": "^1.1.2",
-    "cssnano": "^4.1.10",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^5.0.0",
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.5.0",
+    "postcss-scss": "^3.0.0",
     "postcss-url": "^8.0.0",
     "precss": "^4.0.0",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "vue-images-loaded": "^1.1.2"
   },
   "peerDependencies": {
-    "postcss":"^8.0.5"
+    "postcss": "^8.0.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",

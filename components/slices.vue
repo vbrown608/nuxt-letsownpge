@@ -143,6 +143,7 @@ export default {
       }
 
       // Check the format of the color, HEX or RGB?
+      // eslint-disable-next-line unicorn/prefer-starts-ends-with
       if (color.match(/^rgb/)) {
         // If HEX --> store the red, green, blue values in separate variables
         color = color.match(

@@ -6,14 +6,14 @@
           <nuxt-link class="text-blue text-xl" to="/">Let's Own PG&E</nuxt-link>
         </div>
         <div
-          class="transition overflow-hidden flex justify-center h-full w-24 md:w-0 opacity-100 md:opacity-0 ml-auto px-3"
+          class="transition duration-200 overflow-hidden flex justify-center h-full w-24 md:w-0 opacity-100 md:opacity-0 ml-auto px-3"
           :class="{
             'text-blue': !menu.expanded,
             'bg-blue text-white': menu.expanded,
           }"
         >
           <button
-            class="text-xl transition w-full"
+            class="text-xl transition duration-200 w-full"
             @click="menu.expanded = !menu.expanded"
           >
             <i class="material-icons">menu</i>
@@ -89,13 +89,6 @@
 import Prismic from 'prismic-javascript';
 import PrismicConfig from '~/prismic.config.js';
 export default {
-  data() {
-    return {
-      menu: {
-        expanded: false,
-      },
-    };
-  },
   async asyncData({ context, error, req }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
@@ -114,6 +107,13 @@ export default {
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' });
     }
+  },
+  data() {
+    return {
+      menu: {
+        expanded: false,
+      },
+    };
   },
 };
 </script>

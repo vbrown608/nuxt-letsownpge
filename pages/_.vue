@@ -20,31 +20,18 @@
 </template>
 
 <script>
-import Prismic from 'prismic-javascript';
-import ImgixClient from 'imgix-core-js';
-import PrismicConfig from '~/prismic.config.js';
-
-import imgixConfig from '~/imgix.config.js';
-
 export default {
-  async asyncData({ params, error, req }) {
+  async asyncData({ params, error, req, $prismic, $objToParams }) {
     try {
       // eslint-disable-next-line no-console
-      console.log(params);
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
       let document = {};
-      const result = await api.getByUID(
+      const result = await $prismic.api.getByUID(
         'page',
         params.pathMatch.split('/').pop()
       );
       document = result.data;
       // Load the edit button
       // if (process.client) window.prismic.setupEditButton()
-
-      const client = new ImgixClient({
-        domain: imgixConfig.subdomain + '.imgix.net',
-        secureURLToken: imgixConfig.token,
-      });
 
       const ixparams = {
         auto: 'format,compress',
@@ -53,11 +40,14 @@ export default {
 
       const metaImg = () => {
         if (document.meta_image.length > 0) {
-          return client.buildURL(encodeURI(document.meta_image[0].url), {
-            ...ixparams,
-            w: 1200,
-            h: 1200,
-          });
+          return (
+            document.meta_image[0].url +
+            $objToParams({
+              ...ixparams,
+              w: 1200,
+              h: 1200,
+            })
+          );
         }
         return '';
       };
@@ -75,8 +65,8 @@ export default {
       };
 
       // get magnates
-      const magnates = await api
-        .query(Prismic.Predicates.at('document.type', 'disaster_magnate'))
+      const magnates = await $prismic.api
+        .query($prismic.predicates.at('document.type', 'disaster_magnate'))
         .then(response => {
           return response.results;
           // response is the response object, response.results holds the documents

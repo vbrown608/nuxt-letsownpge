@@ -57,14 +57,4 @@ module.exports = {
   variants: {
     opacity: ['responsive', 'hover'],
   },
-  plugins: [
-    require('tailwindcss-transition')({
-      standard: `all ${transitionDuration} ease`,
-      transitions: {
-        slow: 'all 2s ease',
-        'normal-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-        'slow-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-      },
-    }),
-  ],
 };

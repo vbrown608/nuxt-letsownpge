@@ -2,7 +2,7 @@
   <figure class="w-full h-full relative overflow-hidden">
     <picture
       v-images-loaded:on.progress="(loaded = true)"
-      class="w-full h-full transition absolute inset-0 z-10"
+      class="w-full h-full transition duration-200 absolute inset-0 z-10"
       :class="{
         'opacty-0': !loaded,
       }"
@@ -38,8 +38,6 @@
 </template>
 
 <script>
-import ImgixClient from 'imgix-core-js';
-import imgixConfig from '~/imgix.config.js';
 import tailwind from '~/tailwind.config.js';
 
 export default {
@@ -94,17 +92,13 @@ export default {
   },
   data() {
     return {
-      tailwind: tailwind,
+      tailwind,
       loaded: false,
     };
   },
   computed: {
     imgixUrls() {
-      // config
-      const client = new ImgixClient({
-        domain: imgixConfig.subdomain + '.imgix.net',
-        secureURLToken: imgixConfig.token,
-      });
+      // configcli
       const urls = {};
       const defaultParams = {
         auto: 'format,compress',
@@ -122,14 +116,16 @@ export default {
       width = parseInt(width.replace('px', ''));
       let height = width * aspectRatioMultiplier;
       height = height.toFixed(0);
-      urls.pre = client.buildURL(encodeURI(this.originalurl), {
-        ...params,
-        w: width,
-        h: height,
-        blur: 120,
-        px: 40,
-        colorquant: 24,
-      });
+      urls.pre =
+        this.originalurl +
+        this.$objToParams({
+          ...params,
+          w: width,
+          h: height,
+          blur: 120,
+          px: 40,
+          colorquant: 24,
+        });
       // create srcs
       let loopindex = 0;
       for (const screen in tailwind.theme.screens) {
@@ -151,11 +147,13 @@ export default {
         let height = width * aspectRatioMultiplier;
         height = height.toFixed(0);
         urls[screen] = {};
-        urls[screen].url = client.buildURL(encodeURI(this.originalurl), {
-          ...params,
-          w: width,
-          h: height,
-        });
+        urls[screen].url =
+          this.originalurl +
+          this.$objToParams({
+            ...params,
+            w: width,
+            h: height,
+          });
         urls[screen].loaded = false;
         loopindex += loopindex;
       }

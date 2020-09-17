@@ -1,4 +1,3 @@
-import 'dotenv/config';
 // import pkg from './package'
 import prismicRoutes from './getRoutes';
 // import PrismicConfig from './prismic.config'
@@ -26,8 +25,6 @@ export default {
   },
 
   env: {
-    IMGIX_TOKEN: process.env.IMGIX_TOKEN,
-    IMGIX_SUBDOMAIN: process.env.IMGIX_SUBDOMAIN,
     PRISMIC_REPO: process.env.PRISMIC_REPO,
   },
 
@@ -103,23 +100,23 @@ export default {
 
   // plugins
   plugins: [
-    { src: '@/plugins/global.js' },
-    { src: '@/plugins/link-resolver.js' },
-    { src: '@/plugins/html-serializer.js' },
-    { src: '@/plugins/prismic-vue.js' },
-    { src: '@/plugins/is-dark.js' },
+    '@/plugins/global.js',
+    '@/plugins/is-dark.js',
+    '@/plugins/objToParams.js',
   ],
 
   // modules
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/dotenv',
-    '@nuxtjs/axios',
+    '@nuxtjs/prismic',
     '@nuxtjs/pwa',
-    // 'nuxt-webfontloader',
-    'nuxt-purgecss',
     ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }],
   ],
+
+  prismic: {
+    endpoint: `https://${process.env.PRISMIC_REPO}.cdn.prismic.io/api/v2`,
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
 
   // Route Settings
 
@@ -191,7 +188,7 @@ export default {
         tailwindcss: './tailwind.config.js',
         'postcss-normalize': {},
         precss: {},
-        'postcss-nested': {},
+        // 'postcss-nested': {},
         'postcss-preset-env': {},
         cssnano: {},
       },
@@ -200,7 +197,7 @@ export default {
         'tailwindcss',
         'postcss-normalize',
         'precss',
-        'postcss-nested',
+        // 'postcss-nested',
         'postcss-preset-env',
         'cssnano',
       ],

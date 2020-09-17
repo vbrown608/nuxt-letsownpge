@@ -19,27 +19,14 @@
 </template>
 
 <script>
-import Prismic from 'prismic-javascript';
-import ImgixClient from 'imgix-core-js';
-import PrismicConfig from '~/prismic.config.js';
-
-import imgixConfig from '~/imgix.config.js';
-
 export default {
-  async asyncData({ error, req, params, route }) {
+  async asyncData({ error, req, params, route, $objToParams, $prismic }) {
     try {
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
-
       let document = {};
-      const result = await api.getSingle('home');
+      const result = await $prismic.api.getSingle('home');
       document = result.data;
       // Load the edit button
       // if (process.client) window.prismic.setupEditButton()
-
-      const client = new ImgixClient({
-        domain: imgixConfig.subdomain + '.imgix.net',
-        secureURLToken: imgixConfig.token,
-      });
 
       const ixparams = {
         auto: 'format,compress',
@@ -48,11 +35,14 @@ export default {
 
       const metaImg = () => {
         if (document.meta_image.length > 0) {
-          return client.buildURL(encodeURI(document.meta_image[0].url), {
-            ...ixparams,
-            w: 1200,
-            h: 1200,
-          });
+          return (
+            document.meta_image[0].url +
+            $objToParams({
+              ...ixparams,
+              w: 1200,
+              h: 1200,
+            })
+          );
         }
         return '';
       };
