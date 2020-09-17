@@ -15,8 +15,8 @@ export default {
   props: {
     primary: {
       type: Object,
-      default: null
-    }
-  }
-}
+      default: null,
+    },
+  },
+};
 </script>

@@ -22,20 +22,20 @@ export default {
   props: {
     cta: {
       type: String,
-      default: 'Learn more'
+      default: 'Learn more',
     },
     link: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     resolvedLink() {
       if (this.link.link_type === 'Document') {
-        return this.$PrismicLink(this.link)
+        return this.$PrismicLink(this.link);
       }
-      return null
-    }
-  }
-}
+      return null;
+    },
+  },
+};
 </script>

@@ -42,8 +42,8 @@ export default {
   props: {
     content: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
@@ -51,9 +51,9 @@ export default {
         blend: '000000',
         bm: 'multiply',
         balph: '40',
-        crop: 'faces,edges,entropy'
-      }
-    }
-  }
-}
+        crop: 'faces,edges,entropy',
+      },
+    };
+  },
+};
 </script>

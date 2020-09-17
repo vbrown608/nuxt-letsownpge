@@ -9,7 +9,7 @@
       <div
         class="w-full md:w-1/2 md:w-3/7 bg-grey-200 md:px-3"
         :class="{
-          'md:order-2': index % 2 === 0
+          'md:order-2': index % 2 === 0,
         }"
       >
         <imgix
@@ -40,20 +40,20 @@
 </template>
 
 <script>
-import PrismicConfig from '~/prismic.config.js'
+import PrismicConfig from '~/prismic.config.js';
 // import linkResolver from '~/plugins/link-resolver'
 export default {
   props: PrismicConfig.defaultProps,
   data() {
     return {
-      uid: this._uid
-    }
+      uid: this._uid,
+    };
   },
   methods: {
     // linkResolver(doc) {
     //   return linkResolver(doc)
     // }
-  }
+  },
   /* to merge the default values, use the below code instead */
   /*
   props: {
@@ -64,5 +64,5 @@ export default {
     }
   }
   */
-}
+};
 </script>

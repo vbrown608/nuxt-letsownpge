@@ -1,5 +1,5 @@
 // initialize
-import Vue from 'vue'
+import Vue from 'vue';
 /**
  * To learn more about Link Resolving check out the Prismic documentation
  */
@@ -8,11 +8,11 @@ import Vue from 'vue'
 
 const PrismicLink = doc => {
   if (doc.isBroken) {
-    return '/not-found'
+    return '/not-found';
   }
 
   if (doc.type === 'home') {
-    return '/'
+    return '/';
   }
 
   if (doc.type === 'page') {
@@ -20,12 +20,12 @@ const PrismicLink = doc => {
     // const regex = new RegExp(doc.uid + '$', 'g')
     // const match = prismicRoutes.filter(value => value.match(regex)).pop()
     // return match
-    return '/' + doc.uid
+    return '/' + doc.uid;
   }
 
-  return '/not-found'
-}
+  return '/not-found';
+};
 
-Vue.prototype.$PrismicLink = doc => PrismicLink(doc)
+Vue.prototype.$PrismicLink = doc => PrismicLink(doc);
 
-export default PrismicLink
+export default PrismicLink;

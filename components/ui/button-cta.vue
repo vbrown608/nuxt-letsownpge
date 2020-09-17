@@ -14,27 +14,27 @@ export default {
   props: {
     target: {
       type: String,
-      default: '_self'
+      default: '_self',
     },
     link: {
       type: Object,
-      default: null
+      default: null,
     },
     color: {
       type: String,
-      default: 'blue'
+      default: 'blue',
     },
     cta: {
       type: String,
-      default: 'Learn more'
-    }
+      default: 'Learn more',
+    },
   },
   computed: {
     isDark() {
-      return this.$isDark(this.color)
-    }
-  }
-}
+      return this.$isDark(this.color);
+    },
+  },
+};
 </script>
 
 <style></style>

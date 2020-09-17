@@ -1,12 +1,12 @@
 // initialize
-import Vue from 'vue'
+import Vue from 'vue';
 
 // debouncing & component loading
-import upperFirst from 'lodash/upperFirst'
-import camelCase from 'lodash/camelCase'
+import upperFirst from 'lodash/upperFirst';
+import camelCase from 'lodash/camelCase';
 
-Vue.config.productionTip = false
-Vue.config.performance = true
+Vue.config.productionTip = false;
+Vue.config.performance = true;
 
 // load all components
 const requireComponent = require.context(
@@ -16,13 +16,13 @@ const requireComponent = require.context(
   true,
   // which files?
   /[\w-]+\.vue$/
-)
+);
 
 // For each matching file name...
 requireComponent.keys().forEach(fileName => {
   // Get the component config
   // const fileNameOnly = fileName.split('/').pop()
-  const componentConfig = requireComponent(fileName)
+  const componentConfig = requireComponent(fileName);
   // Get the PascalCase version of the component name
   const componentName = upperFirst(
     camelCase(
@@ -31,7 +31,7 @@ requireComponent.keys().forEach(fileName => {
         .split('/')
         .pop()
     )
-  )
+  );
   // Globally register the component
-  Vue.component(componentName, componentConfig.default || componentConfig)
-})
+  Vue.component(componentName, componentConfig.default || componentConfig);
+});

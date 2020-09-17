@@ -9,7 +9,7 @@
           class="transition overflow-hidden flex justify-center h-full w-24 md:w-0 opacity-100 md:opacity-0 ml-auto px-3"
           :class="{
             'text-blue': !menu.expanded,
-            'bg-blue text-white': menu.expanded
+            'bg-blue text-white': menu.expanded,
           }"
         >
           <button
@@ -24,7 +24,7 @@
           <div
             v-show="menu.expanded"
             class="bg-blue md:bg-transparent ml-auto px-8 flex flex-col md:flex-row items-end"
-            style="box-shadow: rgba(255,255,255,.2) 0px 0px 0px 2px;"
+            style="box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 2px"
             @click="menu.expanded = !menu.expanded"
           >
             <div class="h-6 flex-shrink-0" />
@@ -86,34 +86,34 @@
 </template>
 
 <script>
-import Prismic from 'prismic-javascript'
-import PrismicConfig from '~/prismic.config.js'
+import Prismic from 'prismic-javascript';
+import PrismicConfig from '~/prismic.config.js';
 export default {
   data() {
     return {
       menu: {
-        expanded: false
-      }
-    }
+        expanded: false,
+      },
+    };
   },
   async asyncData({ context, error, req }) {
     try {
-      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req })
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
 
-      let document = {}
-      const result = await api.getSingle('site_settings')
-      document = result.data
+      let document = {};
+      const result = await api.getSingle('site_settings');
+      document = result.data;
 
       // Load the edit button
-      if (process.client) window.prismic.setupEditButton()
+      if (process.client) window.prismic.setupEditButton();
 
       return {
         document,
-        documentId: result.id
-      }
+        documentId: result.id,
+      };
     } catch (e) {
-      error({ statusCode: 404, message: 'Page not found' })
+      error({ statusCode: 404, message: 'Page not found' });
     }
-  }
-}
+  },
+};
 </script>

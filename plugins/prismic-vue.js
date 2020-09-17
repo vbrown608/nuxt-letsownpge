@@ -1,12 +1,12 @@
-import Vue from 'vue'
-import PrismicVue from 'prismic-vue'
-import linkResolver from './link-resolver'
-import htmlSerializer from './html-serializer'
-import PrismicConfig from '~/prismic.config'
+import Vue from 'vue';
+import PrismicVue from 'prismic-vue';
+import linkResolver from './link-resolver';
+import htmlSerializer from './html-serializer';
+import PrismicConfig from '~/prismic.config';
 
 Vue.use(PrismicVue, {
   linkResolver,
-  htmlSerializer
-})
+  htmlSerializer,
+});
 
-Vue.prototype.$defaultProps = () => PrismicConfig.defaultProps
+Vue.prototype.$defaultProps = () => PrismicConfig.defaultProps;

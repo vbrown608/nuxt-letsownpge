@@ -22,15 +22,15 @@
 </template>
 
 <script>
-import PrismicConfig from '~/prismic.config.js'
+import PrismicConfig from '~/prismic.config.js';
 
 export default {
   props: PrismicConfig.defaultProps,
   data() {
     return {
-      uid: this._uid
-    }
-  }
+      uid: this._uid,
+    };
+  },
   /* to merge the default values, use the below code instead */
   /*
   props: {
@@ -41,5 +41,5 @@ export default {
     }
   }
   */
-}
+};
 </script>

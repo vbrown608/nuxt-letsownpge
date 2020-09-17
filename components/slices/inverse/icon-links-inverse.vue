@@ -5,6 +5,6 @@
 <script>
 export default {
   name: 'IconLinksInverse',
-  extend: 'IconLinks'
-}
+  extend: 'IconLinks',
+};
 </script>

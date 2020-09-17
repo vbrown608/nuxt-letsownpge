@@ -1,5 +1,5 @@
-import Prismic from 'prismic-javascript'
-import PrismicConfig from './prismic.config'
+import Prismic from 'prismic-javascript';
+import PrismicConfig from './prismic.config';
 
 // // eslint-disable-next-line no-unused-vars
 // const getParents = (page, query) => {
@@ -53,23 +53,23 @@ import PrismicConfig from './prismic.config'
 
 const prismicRoutes = new Promise((resolve, reject) => {
   // get api
-  resolve(Prismic.getApi(PrismicConfig.apiEndpoint))
+  resolve(Prismic.getApi(PrismicConfig.apiEndpoint));
 })
   .then(api => {
     // get query
     return new Promise((resolve, reject) => {
-      resolve(api.query(''))
-    })
+      resolve(api.query(''));
+    });
   })
   .then(query => {
     // process query to get routes
-    const routes = []
+    const routes = [];
     query.results
       .filter(page => {
         if (page.type === 'page') {
-          return true
+          return true;
         }
-        return false
+        return false;
       })
       .map(page => {
         // eslint-disable-next-line no-console
@@ -77,13 +77,13 @@ const prismicRoutes = new Promise((resolve, reject) => {
         if (page.type === 'page') {
           // disable until I can figure this out
           // will need redirects set up later
-          const parents = '' // getParents(page, query)
-          routes.push(`/${parents}${page.uid}`)
+          const parents = ''; // getParents(page, query)
+          routes.push(`/${parents}${page.uid}`);
         }
-      })
-    routes.push('/preview')
-    routes.push('/')
-    return routes
-  })
+      });
+    routes.push('/preview');
+    routes.push('/');
+    return routes;
+  });
 
-export default prismicRoutes
+export default prismicRoutes;

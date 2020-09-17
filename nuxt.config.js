@@ -1,10 +1,10 @@
-import 'dotenv/config'
+import 'dotenv/config';
 // import pkg from './package'
-import prismicRoutes from './getRoutes'
+import prismicRoutes from './getRoutes';
 // import PrismicConfig from './prismic.config'
 
 export default {
-  mode: 'universal',
+  target: 'static',
 
   // container name __ + value
   globalName: 'app',
@@ -16,19 +16,19 @@ export default {
     lang: 'en',
     theme_color: '#005179',
     display: 'standalone',
-    background_color: '#005179'
+    background_color: '#005179',
   },
 
   // PWA Options
   workbox: {
-    offlinePage: '/offline.html'
+    offlinePage: '/offline.html',
     // Workbox options
   },
 
   env: {
     IMGIX_TOKEN: process.env.IMGIX_TOKEN,
     IMGIX_SUBDOMAIN: process.env.IMGIX_SUBDOMAIN,
-    PRISMIC_REPO: process.env.PRISMIC_REPO
+    PRISMIC_REPO: process.env.PRISMIC_REPO,
   },
 
   /*
@@ -38,7 +38,7 @@ export default {
     title: "Let's Own PG&E",
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       // { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -48,15 +48,15 @@ export default {
         as: 'style',
         href: 'https://fonts.googleapis.com/css?family=Material+Icons',
         crossorigin: 'anonymous',
-        onload: "this.rel='stylesheet'"
+        onload: "this.rel='stylesheet'",
       },
       {
         rel: 'preload',
         as: 'style',
         href: 'https://fonts.googleapis.com/css?family=Lato:400,400i,900,900i',
         crossorigin: 'anonymous',
-        onload: "this.rel='stylesheet'"
-      }
+        onload: "this.rel='stylesheet'",
+      },
     ],
     // script: [
     //   {
@@ -69,20 +69,20 @@ export default {
     // ],
     __dangerouslyDisableSanitizers: ['script'],
     htmlAttrs: {
-      class: 'h-full w-full relative'
+      class: 'h-full w-full relative',
     },
     bodyAttrs: {
-      class: 'h-full w-full relative bg-white'
-    }
+      class: 'h-full w-full relative bg-white',
+    },
   },
 
   // preload fonts
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
+        return ['script', 'style', 'font'].includes(type);
+      },
+    },
   },
 
   /*
@@ -107,7 +107,7 @@ export default {
     { src: '@/plugins/link-resolver.js' },
     { src: '@/plugins/html-serializer.js' },
     { src: '@/plugins/prismic-vue.js' },
-    { src: '@/plugins/is-dark.js' }
+    { src: '@/plugins/is-dark.js' },
   ],
 
   // modules
@@ -118,25 +118,25 @@ export default {
     '@nuxtjs/pwa',
     // 'nuxt-webfontloader',
     'nuxt-purgecss',
-    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }]
+    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }],
   ],
 
   // Route Settings
 
   router: {
-    routeNameSplitter: '/'
+    routeNameSplitter: '/',
   },
 
   generate: {
     routes: () => {
-      return prismicRoutes
-    }
+      return prismicRoutes;
+    },
   },
 
   // Default Transition
   pageTransition: {
     name: 'transition--fade',
-    mode: 'out-in'
+    mode: 'out-in',
   },
 
   /*
@@ -149,7 +149,7 @@ export default {
   // server settings
   server: {
     port: 3000, // default: 3000
-    host: '0.0.0.0' // default: localhost
+    host: '0.0.0.0', // default: localhost
     // https: {
     //   key: fs.readFileSync(path.resolve(__dirname, '.ssl/localhost.key')),
     //   cert: fs.readFileSync(path.resolve(__dirname, '.ssl/localhost.pem'))
@@ -168,9 +168,9 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
-            fix: true
-          }
-        })
+            fix: true,
+          },
+        });
       }
     },
     // template
@@ -193,7 +193,7 @@ export default {
         precss: {},
         'postcss-nested': {},
         'postcss-preset-env': {},
-        cssnano: {}
+        cssnano: {},
       },
       order: [
         'postcss-import',
@@ -202,8 +202,8 @@ export default {
         'precss',
         'postcss-nested',
         'postcss-preset-env',
-        'cssnano'
-      ]
+        'cssnano',
+      ],
     },
 
     purgecss: {
@@ -213,12 +213,12 @@ export default {
         {
           extractor: class {
             static extract(content) {
-              return content.match(/[A-z0-9-:\\/]+/g)
+              return content.match(/[A-z0-9-:\\/]+/g);
             }
           },
-          extensions: ['html', 'vue', 'js']
-        }
-      ]
-    }
-  }
-}
+          extensions: ['html', 'vue', 'js'],
+        },
+      ],
+    },
+  },
+};
