@@ -1,3 +1,4 @@
+const apiEndpoint = `https://${process.env.PRISMIC_REPO}.prismic.io/api/v2`;
 const fullWidthSlices = 'full-bleed-image, change-background-color';
 const defaultProps = {
   primary: {
@@ -10,4 +11,4 @@ const defaultProps = {
   },
 };
 
-export default { fullWidthSlices, defaultProps };
+export default { apiEndpoint, fullWidthSlices, defaultProps };
