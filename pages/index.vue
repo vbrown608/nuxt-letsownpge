@@ -57,9 +57,13 @@ export default {
       };
 
       // get magnates
-      const magnates = await $prismic.api.query(
-        $prismic.predicates.at('document.type', 'disaster_magnate')
+      const magnates = (
+        await $prismic.api.query(
+          $prismic.predicates.at('document.type', 'disaster_magnate')
+        )
       ).results;
+
+      console.log(magnates);
 
       return {
         document,
