@@ -118,7 +118,7 @@ export default {
       let height = width * aspectRatioMultiplier;
       height = height.toFixed(0);
       urls.pre =
-        this.originalurl +
+        this.originalurl.split('?')[0] +
         this.$objToParams({
           ...params,
           w: width,
@@ -149,7 +149,7 @@ export default {
         height = height.toFixed(0);
         urls[screen] = {};
         urls[screen].url =
-          this.originalurl +
+          this.originalurl.split('?')[0] +
           this.$objToParams({
             ...params,
             w: width,
