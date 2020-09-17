@@ -102,6 +102,7 @@ export default {
       const urls = {};
       const defaultParams = {
         auto: 'format,compress',
+        q: 50,
         fit: 'max',
       };
       const params = { ...defaultParams, ...this.params };
