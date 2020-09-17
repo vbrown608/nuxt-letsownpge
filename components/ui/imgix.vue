@@ -119,6 +119,7 @@ export default {
       height = height.toFixed(0);
       urls.pre =
         this.originalurl.split('?')[0] +
+        '?' +
         this.$objToParams({
           ...params,
           w: width,
@@ -150,6 +151,7 @@ export default {
         urls[screen] = {};
         urls[screen].url =
           this.originalurl.split('?')[0] +
+          '?' +
           this.$objToParams({
             ...params,
             w: width,
