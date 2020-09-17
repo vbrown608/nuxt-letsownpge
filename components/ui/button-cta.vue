@@ -1,6 +1,6 @@
 <template>
   <nav-link
-    class="py-3 px-8 bg-blue hover:bg-teal transition"
+    class="py-3 px-8 bg-blue hover:bg-teal transition duration-200"
     :link="link"
     :class="{ 'text-white': isDark }"
     :target="target"

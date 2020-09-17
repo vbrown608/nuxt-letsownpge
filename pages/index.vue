@@ -63,8 +63,6 @@ export default {
         )
       ).results;
 
-      console.log(magnates);
-
       return {
         document,
         magnates,

@@ -15,7 +15,7 @@
           <nuxt-link class="text-white mb-2" to="/benefits">Benefits</nuxt-link>
           <a
             target="_blank"
-            class="text-white my-2 font-bold"
+            class="text-white mb-2 font-bold"
             href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
           >
             Join
