@@ -1,6 +1,19 @@
 const transitionDuration = '.333s';
 
 module.exports = {
+  purge:
+    process.env.NODE_ENV === 'development'
+      ? false
+      : {
+          content: [
+            './components/**/*.vue',
+            './pages/**/*.vue',
+            './layouts/**/*.vue',
+          ],
+          options: {
+            whitelist: ['object-cover', 'object-contain'],
+          },
+        },
   // important: true,
   theme: {
     transitionDuration,
