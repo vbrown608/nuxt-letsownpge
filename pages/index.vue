@@ -34,6 +34,7 @@ export default {
         if (document.meta_image.length > 0) {
           return (
             document.meta_image[0].url.split('?')[0] +
+            '?' +
             $objToParams({
               ...ixparams,
               w: 1200,
