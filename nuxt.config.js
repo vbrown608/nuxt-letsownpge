@@ -106,11 +106,12 @@ export default {
   ],
 
   // modules
-  modules: [
-    '@nuxtjs/prismic',
-    '@nuxtjs/pwa',
-    ['@nuxtjs/google-tag-manager', { id: process.env.GTM_ID }],
-  ],
+  modules: ['@nuxtjs/prismic', '@nuxtjs/pwa', '@nuxtjs/gtm'],
+
+  gtm: {
+    id: process.env.GTM_ID,
+    pageTracking: true,
+  },
 
   prismic: {
     endpoint: `https://${process.env.PRISMIC_REPO}.cdn.prismic.io/api/v2`,
