@@ -16,6 +16,7 @@
           :originalurl="item.image.url"
           class="absolute inset-0"
           object-fit="cover"
+          :maxwidth="600"
         />
       </div>
       <div
