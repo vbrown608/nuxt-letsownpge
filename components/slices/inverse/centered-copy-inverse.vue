@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import CenteredCopy from '../centered-copy.vue'
+import CenteredCopy from '../centered-copy.vue';
 
 export default {
-  extends: CenteredCopy
-}
+  extends: CenteredCopy,
+};
 </script>

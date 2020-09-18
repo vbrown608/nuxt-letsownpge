@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import CenteredHeading from '../centered-heading'
+import CenteredHeading from '../centered-heading';
 
 export default {
-  extends: CenteredHeading
-}
+  extends: CenteredHeading,
+};
 </script>

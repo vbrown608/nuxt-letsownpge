@@ -18,7 +18,7 @@
                 fit: 'facearea',
                 facepad: '2',
                 htn: 6,
-                duotone: '005179,ffffff'
+                duotone: '005179,ffffff',
               }"
               :object-fit="'cover'"
             />
@@ -28,7 +28,7 @@
             {{ magnate.data.title }}
           </div>
           <div
-            class="opacity-50 mt-2 text-blue hover:opacity-100 transition text-xxs font-bold  tracking-wider uppercase flex justify-center items-center"
+            class="opacity-50 mt-2 text-blue hover:opacity-100 transition text-xxs font-bold tracking-wider uppercase flex justify-center items-center"
           >
             <span>Learn More</span> <i class="material-icons ml-1">launch</i>
           </div>
@@ -61,7 +61,7 @@
                 fit: 'facearea',
                 facepad: '2',
                 htn: 8,
-                duotone: '005179,ffffff'
+                duotone: '005179,ffffff',
               }"
               :object-fit="'cover'"
             />
@@ -84,16 +84,16 @@ export default {
   props: {
     primary: {
       type: Object,
-      default: null
+      default: null,
     },
     items: {
       type: Array,
-      default: null
+      default: null,
     },
     magnates: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
@@ -101,8 +101,8 @@ export default {
       modalImage: '',
       modalDesc: '',
       modalName: '',
-      modalTitle: ''
-    }
+      modalTitle: '',
+    };
   },
   computed: {
     magnateContent() {
@@ -111,27 +111,27 @@ export default {
           return this.magnates.find(
             obj =>
               obj.uid.replace('.', '') === magnate.magnate.slug.replace('.', '')
-          )
-        })
+          );
+        });
       }
-      return null
-    }
+      return null;
+    },
   },
   mounted() {
     // console.log(this.items)
   },
   methods: {
     openModal(magnate) {
-      this.modalOpen = true
-      this.modalImage = magnate.data.headshot.url
-      this.modalDesc = magnate.data.description
-      this.modalName = magnate.data.full_name
-      this.modalTitle = magnate.data.title
+      this.modalOpen = true;
+      this.modalImage = magnate.data.headshot.url;
+      this.modalDesc = magnate.data.description;
+      this.modalName = magnate.data.full_name;
+      this.modalTitle = magnate.data.title;
     },
     closeModal() {
-      this.modalOpen = false
-    }
-  }
+      this.modalOpen = false;
+    },
+  },
   /* to merge the default values, use the below code instead */
   /*
   props: {
@@ -142,7 +142,7 @@ export default {
     }
   }
   */
-}
+};
 </script>
 
 <style scoped>

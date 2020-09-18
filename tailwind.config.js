@@ -1,19 +1,32 @@
-const transitionDuration = '.333s'
+const transitionDuration = '.333s';
 
 module.exports = {
+  purge:
+    process.env.NODE_ENV === 'development'
+      ? false
+      : {
+          content: [
+            './components/**/*.vue',
+            './pages/**/*.vue',
+            './layouts/**/*.vue',
+          ],
+          options: {
+            whitelist: ['object-cover', 'object-contain'],
+          },
+        },
   // important: true,
   theme: {
-    transitionDuration: transitionDuration,
+    transitionDuration,
     screens: {
       sm: '600px',
       md: '800px',
       lg: '1200px',
       xl: '1600px',
       hd: '1920px',
-      '4k': '3840px'
+      '4k': '3840px',
     },
     fontFamily: {
-      sans: ['Lato', 'sans-serif']
+      sans: ['Lato', 'sans-serif'],
     },
     // tracking: {
     //   '-3': '-3px',
@@ -26,45 +39,35 @@ module.exports = {
     // },
     minHeight: {
       '1/2-screen': '50vh',
-      screen: '100vh'
+      screen: '100vh',
     },
     extend: {
       fontSize: {
-        xxs: '0.625rem'
+        xxs: '0.625rem',
       },
       lineHeight: {
         tight: '1.333',
-        normal: '1.666'
+        normal: '1.666',
       },
       width: {
         '2/5': '40%',
         '3/5': '60%',
         '3/7': '43%',
-        '4/7': '57%'
+        '4/7': '57%',
       },
       colors: {
         blue: '#005179',
         white: '#ffffff',
         'white-alpha': '#ffffffcc',
-        teal: '#20A4A6'
+        teal: '#20A4A6',
       },
       margin: {
-        '96': '24rem',
-        '128': '32rem'
-      }
-    }
+        96: '24rem',
+        128: '32rem',
+      },
+    },
   },
   variants: {
-    opacity: ['responsive', 'hover']
+    opacity: ['responsive', 'hover'],
   },
-  plugins: [
-    require('tailwindcss-transition')({
-      standard: `all ${transitionDuration} ease`,
-      transitions: {
-        slow: 'all 2s ease',
-        'normal-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-        'slow-in-out-quad': 'all 2s cubic-bezier(0.455, 0.03, 0.515, 0.955)'
-      }
-    })
-  ]
-}
+};

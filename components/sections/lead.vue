@@ -10,10 +10,10 @@ export default {
     text: {
       type: String,
       default:
-        'Cupidatat reprehenderit sint proident dolore elit consectetur minim occaecat.'
-    }
-  }
-}
+        'Cupidatat reprehenderit sint proident dolore elit consectetur minim occaecat.',
+    },
+  },
+};
 </script>
 
 <style></style>
