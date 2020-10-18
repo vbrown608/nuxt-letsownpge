@@ -2,7 +2,7 @@
   <form
     class="w-full max-w-lg"
     name="join"
-    action="/join-success"
+    action="/join-thanks"
     method="post"
     netlify
     netlify-honeypot="bot-field"
