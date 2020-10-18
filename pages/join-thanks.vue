@@ -7,7 +7,11 @@
         :content="document.hero"
       />
       <div class="max-w-lg xl:max-w-xl mx-auto m-12">
-        <div>Thank you for your submission.</div>
+        <prismic-rich-text
+          v-if="document.thanks_text"
+          :field="document.thanks_text"
+          class="mb-12"
+        />
       </div>
     </article>
     <!-- <prismic-edit-button :document-id="documentId" /> -->
