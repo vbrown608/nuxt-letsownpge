@@ -3,41 +3,53 @@
     class="w-full max-w-lg"
     name="join"
     action="/join-thanks"
-    method="post"
+    method="POST"
     netlify
     netlify-honeypot="bot-field"
   >
     <div class="flex flex-wrap -mx-3 mb-6">
       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label class="label required" for="first-name"> First Name </label>
-        <input id="first-name" class="input" type="text" required />
+        <input
+          id="first-name"
+          name="first-name"
+          class="input"
+          type="text"
+          required
+        />
       </div>
       <div class="w-full md:w-1/2 px-3">
         <label class="label required" for="last-name"> Last Name </label>
-        <input id="last-name" class="input" type="text" required />
+        <input
+          id="last-name"
+          name="last-name"
+          class="input"
+          type="text"
+          required
+        />
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
       <div class="w-full px-3">
         <label class="label required" for="email"> Email </label>
-        <input id="email" class="input" type="email" required />
+        <input id="email" name="email" class="input" type="email" required />
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
       <div class="w-full px-3">
         <label class="label" for="phone"> Phone Number </label>
-        <input id="phone" class="input" type="phone" />
+        <input id="phone" name="phone" class="input" type="phone" />
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-10">
       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label class="label" for="city"> City </label>
-        <input id="city" class="input" type="text" />
+        <input id="city" name="phone" class="input" type="text" />
       </div>
       <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label class="label" for="state"> State </label>
         <div class="relative">
-          <select id="state" class="input">
+          <select id="state" name="state" class="input">
             <option value="" disabled selected>Choose</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
