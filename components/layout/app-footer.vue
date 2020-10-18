@@ -13,13 +13,9 @@
             >The Solution</nuxt-link
           >
           <nuxt-link class="text-white mb-2" to="/benefits">Benefits</nuxt-link>
-          <a
-            target="_blank"
-            class="text-white mb-2 font-bold"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
+          <nuxt-link class="text-white mb-2 font-bold" to="/join"
+            >Join</nuxt-link
           >
-            Join
-          </a>
         </div>
         <div class="px-6 max-w-sm">
           <p class="text-white">
