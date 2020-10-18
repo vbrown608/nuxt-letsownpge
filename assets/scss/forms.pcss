@@ -8,3 +8,8 @@
 .label {
   @apply .block .uppercase .tracking-wide .text-gray-700 .text-xs .font-bold .mb-2;
 }
+
+.required:after {
+  @apply .text-red-700;
+  content:" *";
+}

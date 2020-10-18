@@ -6,7 +6,7 @@
         v-if="document.hero && document.hero.length > 0"
         :content="document.hero"
       />
-      <div class="max-w-lg xl:max-w-xl mx-auto">
+      <div class="max-w-lg xl:max-w-xl mx-auto m-12">
         <join-form />
       </div>
     </article>
@@ -23,7 +23,6 @@ export default {
         document,
       };
     } catch (e) {
-      console.log(e);
       error({ statusCode: 404, message: 'Page not found' });
     }
   },
