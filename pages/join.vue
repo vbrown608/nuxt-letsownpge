@@ -7,6 +7,11 @@
         :content="document.hero"
       />
       <div class="max-w-lg xl:max-w-xl mx-auto m-12">
+        <prismic-rich-text
+          v-if="document.introduction"
+          :field="document.introduction"
+          class="mb-12"
+        />
         <join-form />
       </div>
     </article>
