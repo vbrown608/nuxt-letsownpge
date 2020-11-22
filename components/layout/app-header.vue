@@ -44,11 +44,13 @@
               >The Plan</nuxt-link
             >
             <div class="px-3 mt-3 md:mt-0">
-              <nuxt-link
+              <a
                 class="inline-block text-blue bg-white md:text-white py-3 px-8 uppercase tracking-widest md:bg-blue"
-                to="/join"
-                >Join</nuxt-link
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
+                target="_blank"
               >
+                Join
+              </a>
             </div>
             <div class="h-10 flex-shrink-0" />
           </div>
@@ -70,10 +72,11 @@
             >The Plan</nuxt-link
           >
           <div class="px-3 mt-3 md:mt-0">
-            <nuxt-link
+            <a
               class="inline-block text-sm text-white py-2 px-8 uppercase tracking-widest md:bg-blue"
-              to="/join"
-              >Join</nuxt-link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe1ijC4toV955tEmwgRyZcFe1zni5fOZsytUBMudfnV60iiZQ/viewform"
+              target="_blank"
+              >Join</a
             >
           </div>
         </div>
