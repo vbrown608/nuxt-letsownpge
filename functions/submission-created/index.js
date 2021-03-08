@@ -54,6 +54,6 @@ const sendConfirmationEmail = function (payload) {
 };
 
 const thanksHTML = function (name) {
-  const tpl = fs.readFileSync('thanks.html');
+  const tpl = fs.readFileSync(require.resolve('./thanks.html'));
   return `<p>${name}</p>` + tpl;
 };
