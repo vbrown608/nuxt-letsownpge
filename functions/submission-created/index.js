@@ -39,7 +39,7 @@ const addSubmissionToGoogleSheet = async function (payload) {
 
 const sendConfirmationEmail = function (payload) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  const html = thanksHTML(payload.data.name);
+  const html = thanksHTML(payload.data['first-name']);
   const text = html.replace(/<[^>]*>/g, '');
   const msg = {
     to: payload.data.email,
